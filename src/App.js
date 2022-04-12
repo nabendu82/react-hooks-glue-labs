@@ -1,10 +1,18 @@
+import React from 'react'
 import './App.css';
-import HookCounter6 from './components/HookCounter6';
+import GrandParent from './components/GrandParent';
+
+export const UserContext = React.createContext()
+export const ChannelContext = React.createContext()
 
 function App() {
   return (
     <div className="App">
-      <HookCounter6 />
+      <UserContext.Provider value='Nabendu'>
+        <ChannelContext.Provider value='React JS'>
+          <GrandParent />
+        </ChannelContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }
